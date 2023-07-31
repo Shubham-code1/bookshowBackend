@@ -24,7 +24,7 @@ const getLastBooking = async(req,res)=>{
    try {
         const sortQuery = { timestampField: -1 };
         const lastBookedmovie = await Movie.find().sort({ bookingTimestamp: -1 }).limit(1);
-                if(!lastBookedmovie){
+                if(lastBookedmovie.length === 0){
                     res.status(404).json({
                         status:"failed",
                         message:"No movie found in database"
