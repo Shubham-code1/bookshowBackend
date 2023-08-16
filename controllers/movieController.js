@@ -8,17 +8,14 @@ const BookedMovie = async(req,res)=>{
 
 try{
     const movie = await Movie.create(req.body);
-        res.status(200).
-        //rest API structure has been used here 
-        json({
+        res.status(200).json({
             status:"Success",
             data:{
                 movie
             }
         })
     }catch(err){
-        res.status(400).
-        json({          //rest API structure has been used here 
+        res.status(400).json({          
             status:"Failed",
             error:err.message
         })
@@ -34,13 +31,11 @@ const getLastBooking = async(req,res)=>{
         const lastBookedmovie = await Movie.find().sort({ bookingTimestamp: -1 }).limit(1);
                 if(lastBookedmovie.length === 0){
                     res.status(404).json({
-                        //rest API structure
                         status:"failed",
                         message:"No movie found in database"
                     })
                 }else{
                     res.status(200).json({
-                        //rest api structure
                         status:"Success",
                         data:{
                             lastBookedmovie   
@@ -49,7 +44,6 @@ const getLastBooking = async(req,res)=>{
                 }
    }catch(err){
         res.status(500).json({
-            //rest api structure
             status:"failed",
             error:err.message
         })
