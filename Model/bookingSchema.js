@@ -1,7 +1,7 @@
-
 const mongoose = require('mongoose');
 
 
+//creating a schema for data to be saved in database using mongoose.
 const bookMovieSchema = new mongoose.Schema({
     movie:{
         type:String,
@@ -14,28 +14,22 @@ const bookMovieSchema = new mongoose.Schema({
     },
     seats:{
         A1:{
-            type:Number,
-            default:0
+            type:Number
         },
         A2:{
-            type:Number,
-            default:0
+            type:Number
         },
         A3:{
-            type:Number,
-            default:0
+            type:Number
         },
         A4:{
-            type:Number,
-            default:0
+            type:Number
         },
         D1:{
-            type:Number,
-            default:0
+            type:Number
         },
         D2:{
-            type:Number,
-            default:0
+            type:Number
         }
     },
     bookingTimestamp:{
@@ -44,6 +38,7 @@ const bookMovieSchema = new mongoose.Schema({
     }
 });
 
+//creating a Model based on bookMovieSchema.
 
 const Movie = mongoose.model("Movie",bookMovieSchema)
 
