@@ -34,6 +34,34 @@ This meticulously crafted backend project streamlines movie bookings by enabling
  - Utility that monitors for changes and automatically restarts the server during development.
 
 
+### Database 
 
+ - MongoDB 
+ - MongoDB Atlas
 
+### Database connectivity 
 
+- remote 
+- local 
+
+## API 
+
+/api/booking
+
+## request method used
+
+- GET - for getting the last or most recent booked movies 
+- POST - for creating a new document in movies collection.
+
+## Controllers 
+
+- getLastBooking
+- BookedMovie
+
+## deployed on  
+
+- render.com
+
+## deployed link 
+
+- https://bookmyshowbackend-9p5q.onrender.com/
